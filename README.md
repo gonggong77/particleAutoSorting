@@ -57,6 +57,8 @@ https://github.com/gonggong77/particleAutoSorting.git
 Tools > particle auto sorting
 ```
 
+> 자세한 사용 가이드(UI 구조, 수정 모드, 인터리브 경고 대응, CSV 컬럼, FAQ 등)는 **[Documentation~/USAGE.md](Documentation~/USAGE.md)** 를 참조하세요.
+
 ### 기본 흐름
 
 1. 창 좌측 **DropZone**에 분석할 프리팹들을 Hierarchy 또는 Project 창에서 드래그앤드롭
