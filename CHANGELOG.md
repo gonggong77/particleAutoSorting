@@ -5,6 +5,11 @@
 포맷은 [Keep a Changelog](https://keepachangelog.com/ko/1.1.0/) 를 따르며,
 버전 체계는 [Semantic Versioning](https://semver.org/lang/ko/) 을 따릅니다.
 
+## [1.0.1] - 2026-05-01
+
+### Fixed
+- 패키지 루트 파일/폴더(`package.json`, `README.md`, `CHANGELOG.md`, `LICENSE`, `Editor`)에 `.meta` 파일이 없어 UPM Git 설치 시 Unity 콘솔에 "no meta file, but it's in an immutable folder. The asset will be ignored." 경고가 다수 출력되던 문제 해결. 1.0.0의 동작에는 영향 없음.
+
 ## [1.0.0] - 2026-05-01
 
 ### Added
