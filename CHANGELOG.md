@@ -5,6 +5,15 @@
 포맷은 [Keep a Changelog](https://keepachangelog.com/ko/1.1.0/) 를 따르며,
 버전 체계는 [Semantic Versioning](https://semver.org/lang/ko/) 을 따릅니다.
 
+## [1.0.2] - 2026-05-06
+
+### Added
+- Above/Below 구조가 없는 프리팹을 자동으로 Above로 처리하는 기능 추가
+  - 기존: "Above/Below 구조 누락" 경고 + 회색 오류 테두리/Pill 표시, `Root` 그룹으로 수집
+  - 변경: 모든 렌더러를 `Above` 그룹으로 자동 수집, 정렬·적용 정상 동작
+  - 목록에 파란 **"Above 자동 적용"** Pill로 자동 처리 알림 표시
+  - 테이블 확장 시 Above/Below 구조 설정을 권장하는 Info HelpBox 표시
+
 ## [1.0.1] - 2026-05-01
 
 ### Fixed
