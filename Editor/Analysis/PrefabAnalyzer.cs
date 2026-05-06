@@ -22,8 +22,8 @@ namespace ParticleAutoSorting.Editor.Analysis
             if (above == null && below == null)
             {
                 data.HasAboveBelow = false;
-                data.Warnings.Add("Above/Below 구조 누락");
-                CollectFromRoot(prefab.transform, data, "Root");
+                data.IsDefaultedToAbove = true;
+                CollectFromRoot(prefab.transform, data, "Above");
             }
             else
             {

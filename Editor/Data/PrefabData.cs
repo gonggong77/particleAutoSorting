@@ -12,6 +12,7 @@ namespace ParticleAutoSorting.Editor.Data
         public int BatchAfter;
         public bool IsExpanded;
         public bool HasAboveBelow;
+        public bool IsDefaultedToAbove;
         public bool HasOverflow;
         public bool IsSelectedForApply = true;
 

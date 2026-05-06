@@ -29,6 +29,14 @@ namespace ParticleAutoSorting.Editor
                 DrawSection(data, "Above");
                 DrawSection(data, "Below");
             }
+            else if (data.IsDefaultedToAbove)
+            {
+                EditorGUILayout.HelpBox(
+                    "Above/Below 구조가 설정되지 않아 모든 렌더러를 Above로 자동 처리했습니다.\n" +
+                    "프리팹 계층에 'Above' 및 'Below' 이름의 GameObject를 추가하면 더 정밀하게 제어할 수 있습니다.",
+                    MessageType.Info);
+                DrawSection(data, "Above");
+            }
             else
             {
                 DrawSection(data, "Root");

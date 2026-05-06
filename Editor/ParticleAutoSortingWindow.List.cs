@@ -11,6 +11,7 @@ namespace ParticleAutoSorting.Editor
         static readonly Color ColorInterleave = new Color(0.95f, 0.55f, 0.10f);
         static readonly Color ColorInstancingOff = new Color(0.90f, 0.25f, 0.25f);
         static readonly Color ColorNoAboveBelow = new Color(0.50f, 0.50f, 0.50f);
+        static readonly Color ColorAutoAbove = new Color(0.30f, 0.55f, 0.90f);
         static readonly Color ColorInactive = new Color(0.90f, 0.80f, 0.20f);
         static readonly Color ColorPreviewDirty = new Color(0.95f, 0.55f, 0.10f);
 
@@ -127,7 +128,9 @@ namespace ParticleAutoSorting.Editor
             if (anyInstancingOff)
                 list.Add(("Instancing OFF", ColorInstancingOff));
 
-            if (!data.HasAboveBelow)
+            if (data.IsDefaultedToAbove)
+                list.Add(("Above 자동 적용", ColorAutoAbove));
+            else if (!data.HasAboveBelow)
                 list.Add(("Above/Below 없음", ColorNoAboveBelow));
 
             if (data.Warnings != null && data.Warnings.Contains(WarnInactive))
@@ -172,7 +175,7 @@ namespace ParticleAutoSorting.Editor
             if (anyInterleave) return ColorInterleave;
             if (data.Warnings != null && data.Warnings.Contains(WarnInactive))
                 return ColorInactive;
-            if (!data.HasAboveBelow) return ColorNoAboveBelow;
+            if (!data.HasAboveBelow && !data.IsDefaultedToAbove) return ColorNoAboveBelow;
 
             return null;
         }
