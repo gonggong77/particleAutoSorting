@@ -5,6 +5,14 @@
 포맷은 [Keep a Changelog](https://keepachangelog.com/ko/1.1.0/) 를 따르며,
 버전 체계는 [Semantic Versioning](https://semver.org/lang/ko/) 을 따릅니다.
 
+## [1.0.3] - 2026-05-06
+
+### Changed
+- `[하이어라키만 재정렬]` 실행 후 영향받은 프리팹을 자동 재분석하여 리스트/테이블이 즉시 새 순서를 반영하도록 변경
+  - 기존: 디스크의 sibling 순서만 바뀌고 윈도우 표시는 옛 순서 그대로
+  - 변경: 선택된 프리팹의 `Renderers` 목록을 새 hierarchy 기준으로 재수집
+  - 펼침 상태, 선택 체크, GPU Instancing 펜딩 변경은 보존
+
 ## [1.0.2] - 2026-05-06
 
 ### Added

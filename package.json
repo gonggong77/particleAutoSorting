@@ -1,6 +1,6 @@
 {
   "name": "com.yurieiyi.particle-auto-sorting",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "displayName": "Particle Auto Sorting",
   "description": "파티클 시스템의 Order in Layer / Sorting Fudge를 자동으로 세팅하여 (1) 배치 수(Draw Call) 최소화, (2) Hierarchy 하단 우선 렌더링 순서 보장을 동시에 달성하는 Unity Editor 확장 도구입니다.\n\n메뉴: Tools > particle auto sorting\n\n주요 기능:\n- 프리팹의 Above/Below 구조 자동 분석\n- Material 런(run) 단위 OiL/Fudge 자동 할당\n- 인터리브 감지 및 경고\n- Hierarchy Sibling 드래그 재정렬 + 미리보기\n- Undo 그룹 기반 안전한 적용\n- UTF-8 BOM CSV 리포트 출력\n- 외부 패키지 의존 0개",
   "unity": "6000.0",

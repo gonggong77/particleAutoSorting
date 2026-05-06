@@ -1,6 +1,7 @@
 using System.IO;
 using ParticleAutoSorting.Editor.Analysis;
 using ParticleAutoSorting.Editor.Apply;
+using ParticleAutoSorting.Editor.Optimization;
 using ParticleAutoSorting.Editor.Report;
 using UnityEditor;
 using UnityEngine;
@@ -128,6 +129,23 @@ namespace ParticleAutoSorting.Editor
             bool ok = HierarchyReorderer.Apply(prefabs);
             if (ok)
             {
+                // 디스크의 sibling 순서가 바뀌었으므로 영향받은 프리팹을 재분석해
+                // 리스트/테이블이 새 순서를 반영하도록 갱신.
+                for (int i = 0; i < prefabs.Count; i++)
+                {
+                    var old = prefabs[i];
+                    if (old == null || !old.IsSelectedForApply) continue;
+                    if (old.Prefab == null) continue;
+
+                    var fresh = PrefabAnalyzer.Analyze(old.Prefab);
+                    fresh.IsExpanded = old.IsExpanded;
+                    fresh.IsSelectedForApply = old.IsSelectedForApply;
+                    fresh.InstancingOverrides = old.InstancingOverrides;
+
+                    SortingOptimizer.Optimize(fresh, charSortingOrder, fudgeStep);
+                    BatchCounter.CountPrefab(fresh);
+                    prefabs[i] = fresh;
+                }
                 statusMessage = $"하이어라키 재정렬 완료: {selectedBefore}개";
             }
             else
